@@ -13,7 +13,10 @@ public class ToDoSender {
 	@Bean
 	public ApplicationRunner send(MessageChannel input) {
 		return args -> {
-			input.send(MessageBuilder.withPayload(new ToDo("Read a Book")).build());
+			while (true) {
+				input.send(MessageBuilder.withPayload(new ToDo("Read a Book")).build());
+				Thread.sleep(3000);
+			}
 		};
 	}
 }

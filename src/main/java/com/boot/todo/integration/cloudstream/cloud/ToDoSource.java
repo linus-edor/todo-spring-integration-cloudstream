@@ -9,7 +9,7 @@ import org.springframework.integration.support.MessageBuilder;
 
 import com.boot.todo.integration.cloudstream.model.ToDo;
 
-//@EnableBinding(Source.class)
+@EnableBinding(Source.class)
 public class ToDoSource {
 	@Bean
 	@InboundChannelAdapter(channel = Source.OUTPUT)
